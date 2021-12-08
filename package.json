@@ -1,0 +1,28 @@
+{
+  "name": "setup-nodejs",
+  "version": "0.0.1",
+  "description": "projeto de demonstração",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maxwellcc/setup-nodejs.git"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "demo"
+  ],
+  "author": "Maxwell Anderson <max@maxwellanderson.com.br>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maxwellcc/setup-nodejs/issues"
+  },
+  "homepage": "https://github.com/maxwellcc/setup-nodejs#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "jest": "^27.4.3"
+  }
+}
