@@ -1,0 +1,22 @@
+name: CI Tests
+
+on:                   # Gatilhos
+  push:               # On push deve executar
+  pull_request:       # On pull request deve executar
+
+jobs:                           # Quais são os jobs que serão executados
+  test-ci:                      # Nome do job
+    runs-on: ubuntu-20.04       # Nome do ambiente
+
+    strategy:                         # Como será executado (estratégia)
+      matrix:
+        node-version: [14.x, 16.x]    # Versões do node em que será executado. A anterior é para testar a retrocompatibilidade
+
+    steps:                            # Passos que serão executados
+      - uses: actions/checkout@v2     # Utiliza o checkout do github
+      - name: Use Node.js ${{ matrix.node-version }}  # Nome do passo
+        uses: actions/setup-node@v2   # Utiliza o setup do node
+        with:                          # Como será executado
+          node-version: ${{ matrix.node-version }}      # Versão do node
+      - run: npm ci                   # Executa o npm ci
+      - run: npm run test             # Executa o npm run test
